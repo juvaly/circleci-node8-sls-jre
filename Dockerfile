@@ -10,7 +10,7 @@ RUN apt-get update \
 
 RUN curl -O https://bootstrap.pypa.io/get-pip.py \
     && python get-pip.py --user \
-    && /usr/bin/pip install awscli --upgrade --user
+    && /usr/local/bin/pip install awscli --upgrade --user
 
 RUN npm install -g serverless mocha babel-cli
 
