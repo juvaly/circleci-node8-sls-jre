@@ -6,11 +6,12 @@ USER root
 ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update \
-    && apt-get install -y default-jre
+    apt-get autoremove -y && \
+    apt-get upgrade -y && \
+    apt-get install -y default-jre
 
-RUN curl -O https://bootstrap.pypa.io/get-pip.py \
-    && python get-pip.py --user \
-    && /usr/local/bin/pip install awscli --upgrade --user
+RUN apt-get install -y python-pip && \
+    pip install awscli
 
 RUN npm install -g serverless mocha babel-cli
 
