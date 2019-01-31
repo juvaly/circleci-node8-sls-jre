@@ -5,7 +5,7 @@ USER root
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get update \
+RUN apt-get update && \
     apt-get autoremove -y && \
     apt-get upgrade -y && \
     apt-get install -y default-jre
