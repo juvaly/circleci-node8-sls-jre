@@ -6,7 +6,7 @@ USER root
 ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update \
-    && apt-get install -y default-jre \
+    && apt-get install -y default-jre
 
 RUN curl -O https://bootstrap.pypa.io/get-pip.py \
     && python get-pip.py --user \
